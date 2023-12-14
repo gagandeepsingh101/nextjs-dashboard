@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: 'Contain Information about customer',
 };
 
-const page = async ({ searchParams }: { searchParams?: { query?: string, page?: string } }) => {
+const Page = async ({ searchParams }: { searchParams?: { query?: string, page?: string } }) => {
   const customers = await fetchFilteredCustomers(searchParams?.query || '');
   console.log(customers)
   return (
@@ -15,4 +15,4 @@ const page = async ({ searchParams }: { searchParams?: { query?: string, page?: 
     </main>
   )
 }
-export default page
+export default Page;

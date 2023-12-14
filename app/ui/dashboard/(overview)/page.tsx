@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Admin Dashboard',
   description: `Contain Information about customer's invoices and revenue`,
 };
-const page = async () => {
+const Page = async () => {
   const { numberOfCustomers, numberOfInvoices, totalPaidInvoices, totalPendingInvoices } = await fetchCardData();
   return (
     <main>
@@ -30,4 +30,4 @@ const page = async () => {
   )
 }
 
-export default page
+export default Page
