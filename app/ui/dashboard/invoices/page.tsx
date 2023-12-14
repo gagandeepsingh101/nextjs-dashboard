@@ -13,16 +13,10 @@ export const metadata: Metadata = {
   title: 'Invoices | Acme Dashboard',
 };
 
-export default async function Page(
-  { searchParam, }: {
-    searchParam?: {
-      query?: string,
-      page?: string
-    }
-  }
-) {
-  const query = searchParam?.query || '';
-  const currentPage = Number(searchParam?.page) || 1;
+const page = async ({ searchParams }: { searchParams?: { query?: string, page?: string } }) => {
+
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
   const totalPages = await fetchInvoicesPages(query);
   return (
     <div className="w-full">
